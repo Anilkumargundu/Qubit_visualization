@@ -135,6 +135,7 @@ canvas_result = st_canvas(
 st.markdown("""
 **Notes / Reference:**
 
+- a and b are complex numbers
 - Re(a) ∈ [0, 1], Re(b) ∈ [-1, 1], Im(b) ∈ [-1, 1], and they satisfy the normalization condition:
   [Re(a)]² + [Re(b)]² + [Im(b)]² = 1. Therefore, at most one of these three values can have absolute value 1 at any time.
 - Quantum state in spherical coordinates:
@@ -151,5 +152,6 @@ st.markdown(
     </div>
     """,
     unsafe_allow_html=True)
+
 
 
