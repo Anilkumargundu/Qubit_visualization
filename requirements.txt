@@ -1,0 +1,6 @@
+streamlit
+numpy
+matplotlib
+streamlit-drawable-canvas
+scipy
+plotly
