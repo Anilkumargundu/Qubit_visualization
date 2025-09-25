@@ -142,3 +142,12 @@ st.markdown("""
 - θ ∈ [0, π] → polar angle from z-axis
 - φ ∈ [0, 2π] → azimuthal angle in x-y plane
 """)
+st.markdown(
+    """
+    <hr style="margin-top: 3em; margin-bottom: 0.5em">
+    <div style='text-align: center; font-size: 1.3em; color: black;'>
+        © 2025 Anil Kumar Gundu | 
+        <a href="https://anilkumargundu.github.io" target="_blank">Home</a>
+    </div>
+    """,
+    unsafe_allow_html=True)
