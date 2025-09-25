@@ -118,7 +118,7 @@ with col3:
 st.write(f"**Normalized State: |ψ⟩ = ({a:.2f})|0⟩ + ({b:.2f})|1⟩**")
 
 # --- Bottom Row: Interactive Canvas ---
-st.subheader("Interactive Canvas (bottom row)")
+st.subheader("Interactive Canvas (click on the below plane and live interact with the bloch sphere)")
 canvas_result = st_canvas(
     fill_color="rgba(255, 0, 0, 0.3)",
     stroke_width=3,
@@ -151,3 +151,4 @@ st.markdown(
     </div>
     """,
     unsafe_allow_html=True)
+
