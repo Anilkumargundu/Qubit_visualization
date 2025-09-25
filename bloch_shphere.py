@@ -19,6 +19,23 @@ a_imag_input = clamp_input(col_inputs[1].number_input("Im(a)", value=0.0, step=0
 b_real_input = clamp_input(col_inputs[2].number_input("Re(b)", value=0.0, step=0.1))
 b_imag_input = clamp_input(col_inputs[3].number_input("Im(b)", value=0.0, step=0.1))
 
+# --- Bottom Row: Interactive Canvas and Info ---
+st.subheader("Interactive Canvas (click on the plane below to interact with the Bloch sphere live)")
+col_canvas, col_info = st.columns([1, 2])  # left = canvas, right = notes
+
+with col_canvas:
+    canvas_result = st_canvas(
+        fill_color="rgba(255, 0, 0, 0.3)",
+        stroke_width=3,
+        stroke_color="blue",
+        background_color="#f9f9f9",
+        update_streamlit=True,
+        height=250,
+        width=250,
+        drawing_mode="point",
+        key="canvas_bottom",
+    )
+
 # --- Determine coefficients ---
 def get_coefficients(canvas_result, a_real_input, a_imag_input, b_real_input, b_imag_input):
     if canvas_result and canvas_result.json_data and len(canvas_result.json_data["objects"]) > 0:
@@ -39,8 +56,7 @@ def get_coefficients(canvas_result, a_real_input, a_imag_input, b_real_input, b_
         b /= norm
     return a, b
 
-# Dummy canvas_result for top figures
-canvas_result = None
+# Compute coefficients from either input or canvas
 a, b = get_coefficients(canvas_result, a_real_input, a_imag_input, b_real_input, b_imag_input)
 
 theta = 2 * np.arccos(np.abs(a))
@@ -70,8 +86,10 @@ with col1:
     ax.set_title("Cartesian Plane")
     ax.scatter(a.real, a.imag, color="blue", s=100, label="a (|0⟩)")
     ax.scatter(b.real, b.imag, color="red", s=100, label="b (|1⟩)")
-    ax.annotate(f"a=({a.real:.2f},{a.imag:.2f})", (a.real, a.imag), xytext=(5,5), textcoords="offset points", color="blue")
-    ax.annotate(f"b=({b.real:.2f},{b.imag:.2f})", (b.real, b.imag), xytext=(5,5), textcoords="offset points", color="red")
+    ax.annotate(f"a=({a.real:.2f},{a.imag:.2f})", (a.real, a.imag), xytext=(5,5),
+                textcoords="offset points", color="blue")
+    ax.annotate(f"b=({b.real:.2f},{b.imag:.2f})", (b.real, b.imag), xytext=(5,5),
+                textcoords="offset points", color="red")
     ax.legend()
     st.pyplot(fig)
 
@@ -114,35 +132,25 @@ with col3:
     ax.set_title("Bloch Sphere θ/φ", fontsize=12)
     st.pyplot(fig)
 
-# --- Normalized State ---
-st.write(f"**Normalized State: |ψ⟩ = ({a:.2f})|0⟩ + ({b:.2f})|1⟩**")
+# --- Right side info already handled above ---
+with col_info:
+    # --- Normalized State ---
+    st.write(f"### Normalized State\n|ψ⟩ = ({a:.2f})|0⟩ + ({b:.2f})|1⟩")
 
-# --- Bottom Row: Interactive Canvas ---
-st.subheader("Interactive Canvas (click on the plane below to interact with the Bloch sphere live)")
-canvas_result = st_canvas(
-    fill_color="rgba(255, 0, 0, 0.3)",
-    stroke_width=3,
-    stroke_color="blue",
-    background_color="#f9f9f9",
-    update_streamlit=True,
-    height=250,
-    width=250,
-    drawing_mode="point",
-    key="canvas_bottom",
-)
+    # --- Notes Section ---
+    st.markdown("""
+    **Notes / Reference:**
+    
+    - a and b are complex numbers  
+    - Re(a) ∈ [0, 1], Re(b) ∈ [-1, 1], Im(b) ∈ [-1, 1], and they satisfy the normalization condition:  
+      [Re(a)]² + [Re(b)]² + [Im(b)]² = 1. Therefore, at most one of these three values can have absolute value 1 at any time.  
+    - Quantum state in spherical coordinates:  
+      |ψ⟩ = cos(θ/2)|0⟩ + e^(iφ) sin(θ/2)|1⟩  
+    - θ ∈ [0, π] → polar angle from z-axis  
+    - φ ∈ [0, 2π] → azimuthal angle in x-y plane  
+    """)
 
-# --- Notes Section ---
-st.markdown("""
-**Notes / Reference:**
-
-- a and b are complex numbers
-- Re(a) ∈ [0, 1], Re(b) ∈ [-1, 1], Im(b) ∈ [-1, 1], and they satisfy the normalization condition:
-  [Re(a)]² + [Re(b)]² + [Im(b)]² = 1. Therefore, at most one of these three values can have absolute value 1 at any time.
-- Quantum state in spherical coordinates:
-  |ψ⟩ = cos(θ/2)|0⟩ + e^(iφ) sin(θ/2)|1⟩
-- θ ∈ [0, π] → polar angle from z-axis
-- φ ∈ [0, 2π] → azimuthal angle in x-y plane
-""")
+# --- Footer ---
 st.markdown(
     """
     <hr style="margin-top: 3em; margin-bottom: 0.5em">
@@ -152,6 +160,3 @@ st.markdown(
     </div>
     """,
     unsafe_allow_html=True)
-
-
-
