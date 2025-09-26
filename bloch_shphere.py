@@ -124,20 +124,34 @@ if st.session_state.active_page == "visualization":
         ax.legend()
         st.pyplot(fig)
 
-    with col2:
+    def plot_bloch_with_axes(vector, color, title):
         fig = plt.figure(figsize=(3.5,3.5))
         ax = fig.add_subplot(111, projection='3d')
         ax.plot_surface(X, Y, Z, color='c', alpha=0.1, edgecolor='gray')
-        ax.quiver(0,0,0, x,y,z, color='purple', linewidth=3)
-        ax.set_title("Bloch Sphere")
-        st.pyplot(fig)
+        ax.quiver(0,0,0, vector[0], vector[1], vector[2], color=color, linewidth=3)
+
+        # Add axis markers
+        ax.quiver(0,0,0, 1.05,0,0, color='r')
+        ax.quiver(0,0,0, 0,1.05,0, color='g')
+        ax.quiver(0,0,0, 0,0,1.05, color='b')
+        ax.text(1.1, 0, 0, 'X', color='r')
+        ax.text(0, 1.1, 0, 'Y', color='g')
+        ax.text(0, 0, 1.15, 'Z', color='b')
+        ax.text(0, 0, 1.05, '|0⟩', fontsize=9)
+        ax.text(0, 0, -1.1, '|1⟩', fontsize=9)
+
+        ax.set_xlim([-1.1, 1.1])
+        ax.set_ylim([-1.1, 1.1])
+        ax.set_zlim([-1.1, 1.1])
+        ax.set_box_aspect([1,1,1])
+        ax.set_title(title)
+        return fig
+
+    with col2:
+        st.pyplot(plot_bloch_with_axes((x,y,z), "purple", "Bloch Sphere"))
 
     with col3:
-        fig = plt.figure(figsize=(3.5,3.5))
-        ax = fig.add_subplot(111, projection='3d')
-        ax.plot_surface(X, Y, Z, color='c', alpha=0.1, edgecolor='gray')
-        ax.quiver(0,0,0, x,y,z, color='black', linewidth=3)
-        st.pyplot(fig)
+        st.pyplot(plot_bloch_with_axes((x,y,z), "black", "Bloch Sphere (Alt View)"))
 
     # Right side info
     with col_info:
