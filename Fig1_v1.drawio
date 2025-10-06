@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36" version="28.2.5">
   <diagram name="Page-1" id="-1gzF2Dyj5mBQXq9cQPM">
-    <mxGraphModel dx="719" dy="363" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="595" dy="301" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -383,8 +383,11 @@
             <mxPoint x="360" y="239.17" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="sUr1qKokxM94UTDC0hcx-52" value="&lt;div style=&quot;line-height: 100%;&quot;&gt;Statistical bias enables prediction&lt;/div&gt;" style="text;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontSize=11;spacing=0;fontFamily=Arial Narrow;" vertex="1" parent="1">
-          <mxGeometry x="360" y="146" width="60" height="20" as="geometry" />
+        <mxCell id="sUr1qKokxM94UTDC0hcx-52" value="&lt;div style=&quot;line-height: 100%;&quot;&gt;statistical bias enables prediction&lt;/div&gt;" style="text;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;fontSize=11;spacing=0;fontFamily=Arial Narrow;" vertex="1" parent="1">
+          <mxGeometry x="365" y="146" width="75" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="sUr1qKokxM94UTDC0hcx-53" value="&lt;div style=&quot;line-height: 100%;&quot;&gt;near uniform distribution with limited fundamental frequencies&lt;/div&gt;" style="text;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;fontSize=11;spacing=0;fontFamily=Arial Narrow;" vertex="1" parent="1">
+          <mxGeometry x="365" y="189" width="95" height="20" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
