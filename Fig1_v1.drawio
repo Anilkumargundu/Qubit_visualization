@@ -390,7 +390,7 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="sUr1qKokxM94UTDC0hcx-81" value="&lt;div style=&quot;line-height: 100%;&quot;&gt;&lt;b&gt;Linear Congruence Generator (LCG)&lt;/b&gt;&lt;/div&gt;" style="text;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontSize=18;spacing=0;fontFamily=Arial Narrow;" vertex="1" parent="1">
-          <mxGeometry x="10" y="89" width="460" height="20" as="geometry" />
+          <mxGeometry x="10" y="89" width="470" height="20" as="geometry" />
         </mxCell>
         <mxCell id="sUr1qKokxM94UTDC0hcx-83" value="" style="group" vertex="1" connectable="0" parent="1">
           <mxGeometry x="372" y="209" width="118" height="51" as="geometry" />
@@ -444,8 +444,11 @@
         <mxCell id="sUr1qKokxM94UTDC0hcx-88" value="&lt;div style=&quot;line-height: 100%;&quot;&gt;&lt;font style=&quot;font-size: 15px; line-height: 50%;&quot;&gt;frequency spectrum of the sequence&lt;/font&gt;&lt;/div&gt;" style="text;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontSize=16;spacing=0;fontFamily=Arial Narrow;" vertex="1" parent="1">
           <mxGeometry x="218" y="113" width="110" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="sUr1qKokxM94UTDC0hcx-89" value="&lt;div style=&quot;line-height: 100%;&quot;&gt;&lt;font style=&quot;font-size: 15px; line-height: 80%;&quot;&gt;generator&lt;/font&gt;&lt;/div&gt;" style="text;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontSize=16;spacing=0;fontFamily=Arial Narrow;" vertex="1" parent="1">
+        <mxCell id="sUr1qKokxM94UTDC0hcx-89" value="&lt;div style=&quot;line-height: 100%;&quot;&gt;&lt;font style=&quot;font-size: 15px; line-height: 80%; color: light-dark(rgb(255, 255, 255), rgb(237, 237, 237));&quot;&gt;&amp;nbsp;generator&amp;nbsp;&lt;/font&gt;&lt;/div&gt;" style="text;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontSize=16;spacing=0;fontFamily=Arial Narrow;labelBackgroundColor=light-dark(#787878, #ededed);" vertex="1" parent="1">
           <mxGeometry x="124" y="114" width="80" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="sUr1qKokxM94UTDC0hcx-90" value="&lt;div style=&quot;line-height: 100%;&quot;&gt;&lt;span style=&quot;font-size: 15px;&quot;&gt;density function&lt;/span&gt;&lt;/div&gt;" style="text;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontSize=16;spacing=0;fontFamily=Arial Narrow;" vertex="1" parent="1">
+          <mxGeometry x="343.5" y="109" width="126.5" height="20" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
