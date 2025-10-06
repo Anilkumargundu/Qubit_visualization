@@ -371,7 +371,7 @@
         <mxCell id="sUr1qKokxM94UTDC0hcx-52" value="&lt;div style=&quot;line-height: 90%;&quot;&gt;&lt;b&gt;Smaller &#39;m&#39; :&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;line-height: 100%;&quot;&gt;&lt;ul style=&quot;margin-left: 0px; margin-bottom: 6px; padding-left: 12px; margin-top: 0px;&quot;&gt;&lt;li&gt;&lt;span style=&quot;background-color: transparent;&quot;&gt;&lt;font style=&quot;color: light-dark(rgb(120, 120, 120), rgb(237, 237, 237));&quot;&gt;no randomness&lt;/font&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;font style=&quot;color: light-dark(rgb(120, 120, 120), rgb(237, 237, 237));&quot;&gt;&lt;span style=&quot;background-color: transparent;&quot;&gt;&lt;font style=&quot;&quot;&gt;predicts statistical bia&lt;/font&gt;&lt;/span&gt;&lt;span style=&quot;background-color: transparent;&quot;&gt;s&lt;/span&gt;&lt;/font&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;" style="text;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;fontSize=11;spacing=0;fontFamily=Arial Narrow;" vertex="1" parent="1">
           <mxGeometry x="348" y="148" width="89" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="sUr1qKokxM94UTDC0hcx-53" value="&lt;div style=&quot;line-height: 100%;&quot;&gt;near uniform distribution with limited fundamental frequencies&lt;/div&gt;" style="text;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;fontSize=11;spacing=0;fontFamily=Arial Narrow;" vertex="1" parent="1">
+        <mxCell id="sUr1qKokxM94UTDC0hcx-53" value="&lt;div style=&quot;line-height: 100%;&quot;&gt;Limited tones prevents near-uniform distribution&lt;/div&gt;" style="text;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;fontSize=11;spacing=0;fontFamily=Arial Narrow;" vertex="1" parent="1">
           <mxGeometry x="351" y="184" width="95" height="20" as="geometry" />
         </mxCell>
         <mxCell id="sUr1qKokxM94UTDC0hcx-65" value="" style="group" vertex="1" connectable="0" parent="1">
@@ -441,7 +441,7 @@
         <mxCell id="sUr1qKokxM94UTDC0hcx-87" value="&lt;div style=&quot;line-height: 100%;&quot;&gt;&lt;font style=&quot;font-size: 15px;&quot;&gt;start with seed&lt;/font&gt;&lt;/div&gt;" style="text;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontSize=16;spacing=0;fontFamily=Arial Narrow;" vertex="1" parent="1">
           <mxGeometry x="10" y="141" width="80" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="sUr1qKokxM94UTDC0hcx-88" value="&lt;div style=&quot;line-height: 100%;&quot;&gt;&lt;font style=&quot;font-size: 15px; line-height: 80%;&quot;&gt;frequency spectrum of the sequence&lt;/font&gt;&lt;/div&gt;" style="text;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontSize=16;spacing=0;fontFamily=Arial Narrow;" vertex="1" parent="1">
+        <mxCell id="sUr1qKokxM94UTDC0hcx-88" value="&lt;div style=&quot;line-height: 100%;&quot;&gt;&lt;font style=&quot;font-size: 15px; line-height: 50%;&quot;&gt;frequency spectrum of the sequence&lt;/font&gt;&lt;/div&gt;" style="text;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontSize=16;spacing=0;fontFamily=Arial Narrow;" vertex="1" parent="1">
           <mxGeometry x="218" y="113" width="110" height="20" as="geometry" />
         </mxCell>
         <mxCell id="sUr1qKokxM94UTDC0hcx-89" value="&lt;div style=&quot;line-height: 100%;&quot;&gt;&lt;font style=&quot;font-size: 15px; line-height: 80%;&quot;&gt;generator&lt;/font&gt;&lt;/div&gt;" style="text;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontSize=16;spacing=0;fontFamily=Arial Narrow;" vertex="1" parent="1">
