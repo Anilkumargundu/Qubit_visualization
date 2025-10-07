@@ -396,7 +396,7 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="sUr1qKokxM94UTDC0hcx-81" value="&lt;div style=&quot;line-height: 100%;&quot;&gt;&lt;b&gt;Linear Congruence Generator (LCG)&lt;/b&gt;&lt;/div&gt;" style="text;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontSize=18;spacing=0;fontFamily=Arial Narrow;" vertex="1" parent="1">
-          <mxGeometry x="120" y="85" width="360" height="20" as="geometry" />
+          <mxGeometry x="10" y="85" width="470" height="20" as="geometry" />
         </mxCell>
         <mxCell id="sUr1qKokxM94UTDC0hcx-83" value="" style="group" vertex="1" connectable="0" parent="1">
           <mxGeometry x="372" y="211" width="118" height="51" as="geometry" />
@@ -470,7 +470,7 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="sUr1qKokxM94UTDC0hcx-107" value="&lt;div style=&quot;line-height: 100%;&quot;&gt;&lt;b&gt;Quantum Random Generator&lt;/b&gt;&lt;/div&gt;" style="text;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontSize=18;spacing=0;fontFamily=Arial Narrow;" vertex="1" parent="1">
-          <mxGeometry x="125" y="270" width="360" height="20" as="geometry" />
+          <mxGeometry x="20" y="270" width="460" height="20" as="geometry" />
         </mxCell>
         <mxCell id="sUr1qKokxM94UTDC0hcx-108" value="" style="rounded=0;whiteSpace=wrap;html=1;container=0;fillColor=none;" vertex="1" parent="1">
           <mxGeometry x="15" y="293" width="110" height="123" as="geometry" />
