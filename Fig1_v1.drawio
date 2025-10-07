@@ -528,6 +528,9 @@
             </Array>
           </mxGeometry>
         </mxCell>
+        <mxCell id="sUr1qKokxM94UTDC0hcx-145" value="&lt;font style=&quot;line-height: 100%; font-size: 11px;&quot; face=&quot;Arial Narrow&quot;&gt;$$&lt;br&gt;\textbf{N-qubit case:} \\[2pt]&lt;br&gt;\psi_N = \frac{1}{\sqrt{N}} \sum_{i=0}^{N-1} |i\rangle \\[2pt]&lt;br&gt;\text{Uniform state distribution } \rightarrow \text{ N-bit random output}&lt;br&gt;$$&lt;/font&gt;" style="text;whiteSpace=wrap;fontFamily=Arial Narrow;html=1;align=center;imageWidth=21;arcSize=10;" vertex="1" parent="1">
+          <mxGeometry x="188" y="394" width="460" height="50" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
