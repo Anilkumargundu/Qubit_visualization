@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36" version="28.2.5">
   <diagram name="Page-1" id="-1gzF2Dyj5mBQXq9cQPM">
-    <mxGraphModel dx="868" dy="439" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="1" shadow="0">
+    <mxGraphModel dx="1042" dy="527" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="1" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -412,7 +412,7 @@
         </mxCell>
         <mxCell id="sUr1qKokxM94UTDC0hcx-106" value="" style="curved=1;endArrow=classic;html=1;rounded=0;dashed=1;" edge="1" parent="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="232" y="148" as="sourcePoint" />
+            <mxPoint x="240" y="140" as="sourcePoint" />
             <mxPoint x="221" y="168" as="targetPoint" />
             <Array as="points">
               <mxPoint x="221" y="149" />
@@ -517,6 +517,16 @@
         </mxCell>
         <mxCell id="sUr1qKokxM94UTDC0hcx-142" value="&lt;font style=&quot;font-size: 9px;&quot;&gt;$$P(|0\rangle)=&amp;nbsp; P(|1\rangle)=0.5$$&lt;/font&gt;" style="text;whiteSpace=wrap;verticalAlign=middle;align=center;fontFamily=Arial Narrow;fontSize=11;html=1;" vertex="1" parent="1">
           <mxGeometry x="379" y="376" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="sUr1qKokxM94UTDC0hcx-144" value="" style="curved=1;endArrow=classic;html=1;rounded=0;dashed=1;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="213" y="236" as="sourcePoint" />
+            <mxPoint x="232" y="208" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="223" y="224.60869565217388" />
+              <mxPoint x="213" y="217" />
+            </Array>
+          </mxGeometry>
         </mxCell>
       </root>
     </mxGraphModel>
