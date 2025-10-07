@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36" version="28.2.5">
   <diagram name="Page-1" id="-1gzF2Dyj5mBQXq9cQPM">
-    <mxGraphModel dx="1226" dy="620" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="1" shadow="0">
+    <mxGraphModel dx="719" dy="363" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="1" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -390,13 +390,10 @@
           <mxGeometry width="80" height="110" as="geometry" />
         </mxCell>
         <mxCell id="sPPq37ELEt1q1rfpjTLL-6" value="a, b, &amp;amp; m" style="rounded=0;whiteSpace=wrap;strokeColor=#36393d;opacity=0;labelBorderColor=none;fillColor=none;fontFamily=Arial Narrow;fontSize=20;html=1;spacing=2;fontColor=light-dark(#787878, #ededed);container=0;fontStyle=3" parent="sUr1qKokxM94UTDC0hcx-65" vertex="1">
-          <mxGeometry y="32" width="80" height="38" as="geometry" />
+          <mxGeometry y="20" width="80" height="38" as="geometry" />
         </mxCell>
-        <mxCell id="sPPq37ELEt1q1rfpjTLL-26" value="" style="endArrow=classic;html=1;rounded=0;" parent="sUr1qKokxM94UTDC0hcx-65" edge="1">
-          <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="41.20999999999998" y="33" as="sourcePoint" />
-            <mxPoint x="41.20999999999998" y="83" as="targetPoint" />
-          </mxGeometry>
+        <mxCell id="sUr1qKokxM94UTDC0hcx-150" value="$$&#xa;\Downarrow&#xa;$$" style="text;whiteSpace=wrap;fontFamily=Arial Narrow;fontSize=26;align=center;verticalAlign=middle;" vertex="1" parent="sUr1qKokxM94UTDC0hcx-65">
+          <mxGeometry x="26" y="49" width="30" height="38" as="geometry" />
         </mxCell>
         <mxCell id="sUr1qKokxM94UTDC0hcx-81" value="&lt;div style=&quot;line-height: 100%;&quot;&gt;&lt;b&gt;Linear Congruence Generator (LCG)&lt;/b&gt;&lt;/div&gt;" style="text;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontSize=18;spacing=0;fontFamily=Arial Narrow;" vertex="1" parent="1">
           <mxGeometry x="181" y="85" width="470" height="20" as="geometry" />
