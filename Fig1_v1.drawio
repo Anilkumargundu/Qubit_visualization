@@ -509,7 +509,7 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="sUr1qKokxM94UTDC0hcx-145" value="&lt;font style=&quot;line-height: 100%; font-size: 11px;&quot; face=&quot;Arial Narrow&quot;&gt;$$&lt;br&gt;\textbf{N-qubit case:} \\[2pt]&lt;br&gt;\psi_N = \frac{1}{\sqrt{N}} \sum_{i=0}^{N-1} |i\rangle \\[2pt]&lt;br&gt;\text{Uniform state distribution } \rightarrow \text{ N-bit random output}&lt;br&gt;$$&lt;/font&gt;" style="text;whiteSpace=wrap;fontFamily=Arial Narrow;html=1;align=center;imageWidth=21;arcSize=10;" vertex="1" parent="1">
+        <mxCell id="sUr1qKokxM94UTDC0hcx-145" value="&lt;font face=&quot;Arial Narrow&quot; style=&quot;line-height: 100%; font-size: 11px;&quot;&gt;$$&lt;br&gt;\textbf{N-qubit case:} \\[2pt]&lt;br&gt;\psi_N = \frac{1}{\sqrt{N}} \sum_{i=0}^{N-1} |i\rangle \\[2pt]&lt;br&gt;\text{Uniform state distribution } \rightarrow \text{ N-bit random output}&lt;br&gt;$$&lt;/font&gt;" style="text;whiteSpace=wrap;fontFamily=Arial Narrow;html=1;align=center;imageWidth=21;arcSize=10;" vertex="1" parent="1">
           <mxGeometry x="188" y="394" width="460" height="50" as="geometry" />
         </mxCell>
         <mxCell id="sUr1qKokxM94UTDC0hcx-147" value="&lt;span style=&quot;color: rgb(255, 255, 255); font-family: &amp;quot;Arial Narrow&amp;quot;; font-size: 15px;&quot;&gt;initial seed&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillStyle=solid;fillColor=light-dark(#707070, #c1c1c1);strokeColor=none;" vertex="1" parent="1">
