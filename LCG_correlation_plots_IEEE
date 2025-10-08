@@ -1,0 +1,192 @@
+import numpy as np
+import matplotlib.pyplot as plt
+from mpl_toolkits.mplot3d import Axes3D
+from scipy.stats import entropy
+from matplotlib import rcParams
+
+import matplotlib.font_manager as fm
+import matplotlib.pyplot as plt
+
+
+# -------------------------
+# Set IEEE-compatible font and style
+# -------------------------
+plt.rcParams['font.family'] = 'Arial'  # Set font to Arial Narrow
+plt.rcParams['axes.labelsize'] = 16          # Label font size
+plt.rcParams['axes.titlesize'] = 16          # Title font size
+plt.rcParams['xtick.labelsize'] = 14
+plt.rcParams['ytick.labelsize'] = 14
+plt.rcParams['xtick.direction'] = 'out'      # Axis ticks outside
+plt.rcParams['ytick.direction'] = 'out'
+plt.rcParams['axes.linewidth'] = 1
+plt.rcParams['grid.linestyle'] = '--'
+plt.rcParams['grid.alpha'] = 0.6
+
+# -------------------------
+# LCG class
+# -------------------------
+class LinearCongruentialGenerator:
+    def __init__(self, seed: int, a: int, b: int, m: int):
+        self.m = int(m)
+        self.a = int(a)
+        self.b = int(b)
+        self.seed = int(seed) % self.m
+        self.state = int(self.seed)
+    
+    def next_int(self) -> int:
+        self.state = (self.a * self.state + self.b) % self.m
+        return self.state
+    
+    def generate_ints(self, n: int):
+        return [self.next_int() for _ in range(n)]
+    
+    def reset(self):
+        self.state = int(self.seed)
+
+# -------------------------
+# Parameters
+# -------------------------
+m = 32         # modulus
+seed = 10
+seq_len = 32
+num_samples = 500   # number of a and b samples
+
+np.random.seed(42)
+a_vals = np.random.randint(1, m, size=num_samples)
+b_vals = np.random.randint(0, m, size=num_samples)
+
+corr_matrix = np.zeros((num_samples, num_samples))
+entropy_matrix = np.zeros((num_samples, num_samples))
+
+# -------------------------
+# Compute correlation and entropy
+# -------------------------
+for i, a in enumerate(a_vals):
+    for j, b in enumerate(b_vals):
+        lcg = LinearCongruentialGenerator(seed, a, b, m)
+        x = np.array(lcg.generate_ints(seq_len))
+        
+        # Lag-1 correlation
+        if np.std(x) == 0:
+            corr_matrix[i, j] = 1.0
+        else:
+            corr_matrix[i, j] = np.corrcoef(x[:-1], x[1:])[0,1]
+        
+        # Entropy
+        counts = np.bincount(x, minlength=m)
+        probs = counts / counts.sum()
+        entropy_matrix[i, j] = entropy(probs, base=2)
+
+# Normalize entropy to [0,1]
+entropy_matrix /= np.log2(m)
+
+# -------------------------
+# Meshgrid
+# -------------------------
+A, B = np.meshgrid(b_vals, a_vals)
+
+# -------------------------
+# Plot 1: 3D Surface of Correlation
+# -------------------------
+from matplotlib.colors import TwoSlopeNorm
+
+fig1 = plt.figure(figsize=(12, 7))
+ax1 = fig1.add_subplot(111, projection='3d')
+
+# Diverging colormap: red (negative) → green (positive)
+from matplotlib.colors import LinearSegmentedColormap, TwoSlopeNorm
+
+# Custom colormap: red -> green -> red
+colors = [(1,0,0), (0,1,0), (1,0,0)]  # RGB tuples: red, green, red
+custom_cmap = LinearSegmentedColormap.from_list("RedGreenRed", colors)
+
+# Normalize around zero
+norm = TwoSlopeNorm(vmin=-1, vcenter=0, vmax=1)
+
+# Plot
+surf = ax1.plot_surface(
+    A, B, corr_matrix,
+    cmap=custom_cmap,
+    norm=norm,
+    alpha=0.85,
+    edgecolor='k',
+    linewidth=0.2
+)
+
+
+
+# Zero-correlation plane
+z_plane = np.zeros_like(A)
+ax1.plot_surface(A, B, z_plane, color='gray', alpha=0.2)
+
+# Highlight points near zero correlation
+tol = 0.02
+zero_idx = np.abs(corr_matrix) < tol
+ax1.scatter(A[zero_idx], B[zero_idx], corr_matrix[zero_idx],
+            color='black')
+
+# Axis labels & view
+ax1.set_xlabel("b (increment)")
+ax1.set_ylabel("a (multiplier)")
+ax1.set_zlabel("Correlation")
+#ax1.set_title("LCG Parameter Sweep")
+ax1.view_init(elev=30, azim=45)
+
+# -----------------------------
+# Colorbar (custom width/label)
+# -----------------------------
+cbar = fig1.colorbar(surf, shrink=0.6, aspect=15, pad=0.05)
+cbar.set_label("Correlation")
+cbar.ax.tick_params(labelsize=12, width=1)
+cbar.outline.set_linewidth(1)
+
+# -----------------------------
+# Z-axis limits and ticks
+# -----------------------------
+ax1.set_zlim(-1, 1)
+ax1.set_zticks([-1, -0.5, 0, 0.5, 1])
+
+ax1.legend()
+
+
+# -------------------------
+# Plot 2: 2D Zero-Correlation Slice
+# -------------------------
+fig2, ax2 = plt.subplots(figsize=(8,6))
+ax2.scatter(A[zero_idx], B[zero_idx], color='red', s=60)
+ax2.set_xlabel("b (increment)")
+ax2.set_ylabel("a (multiplier)")
+#ax2.set_title(f"Zero-Correlation Points")
+ax2.grid(True)
+
+# -------------------------
+# Plot 3: Entropy on Zero-Correlation Points
+# -------------------------
+fig3, ax3 = plt.subplots(figsize=(8, 6))
+
+entropy_zero_corr = entropy_matrix[zero_idx]
+
+# Red = low entropy, Green = high entropy
+sc = ax3.scatter(
+    A[zero_idx], B[zero_idx],
+    c=entropy_zero_corr,
+    cmap='RdYlGn',   # red → yellow → green
+    s=80,            # increase point size
+    edgecolors='k',  # black edge for visibility
+    linewidths=0.5
+)
+
+# Labels and title
+ax3.set_xlabel("b (increment)")
+ax3.set_ylabel("a (multiplier)")
+#ax3.set_title("Entropy of Zero-Correlation Points")
+
+# Colorbar customization
+cbar = plt.colorbar(sc, ax=ax3, label='Normalized Entropy', shrink=0.8, aspect=20, pad=0.02)
+cbar.ax.tick_params(labelsize=12, width=1)
+cbar.outline.set_linewidth(1)
+
+ax3.grid(True)
+
+
+plt.show()
