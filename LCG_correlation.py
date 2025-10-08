@@ -22,16 +22,23 @@ class LinearCongruentialGenerator:
         self.state = int(self.seed)
 
 # -------------------------
-# Sweep parameters and compute correlation
+# Parameters
 # -------------------------
-m = 32
+m = 100_000         # large modulus
 seed = 1
 seq_len = 32
-a_vals = range(1, m)
-b_vals = range(0, m)
+num_samples = 500   # sample number of a and b values
 
-corr_matrix = np.zeros((len(a_vals), len(b_vals)))
+# Randomly sample a and b values
+np.random.seed(42)
+a_vals = np.random.randint(1, m, size=num_samples)
+b_vals = np.random.randint(0, m, size=num_samples)
 
+corr_matrix = np.zeros((num_samples, num_samples))
+
+# -------------------------
+# Compute correlation
+# -------------------------
 for i, a in enumerate(a_vals):
     for j, b in enumerate(b_vals):
         lcg = LinearCongruentialGenerator(seed, a, b, m)
@@ -42,7 +49,7 @@ for i, a in enumerate(a_vals):
             corr_matrix[i, j] = np.corrcoef(x[:-1], x[1:])[0,1]
 
 # -------------------------
-# Plot 1: Full 3D Surface
+# Plot 1: 3D Surface
 # -------------------------
 A, B = np.meshgrid(b_vals, a_vals)
 fig1 = plt.figure(figsize=(12,7))
@@ -57,7 +64,7 @@ ax1.plot_surface(A, B, z_plane, color='gray', alpha=0.2)
 tol = 0.02
 zero_idx = np.abs(corr_matrix) < tol
 ax1.scatter(A[zero_idx], B[zero_idx], corr_matrix[zero_idx],
-            color='red', s=50, label='Correlation ≈ 0')
+            color='red', s=20, label='Correlation ≈ 0')
 
 ax1.set_xlabel("b (increment)")
 ax1.set_ylabel("a (multiplier)")
@@ -71,15 +78,11 @@ ax1.legend()
 # Plot 2: 2D Zero-Correlation Slice
 # -------------------------
 fig2, ax2 = plt.subplots(figsize=(8,6))
-
-# Mask points where correlation ≈ 0
 zero_mask = np.abs(corr_matrix) < tol
-ax2.scatter(A[zero_mask], B[zero_mask], color='red', s=50)
+ax2.scatter(A[zero_mask], B[zero_mask], color='red', s=20)
 
 ax2.set_xlabel("b (increment)")
 ax2.set_ylabel("a (multiplier)")
 ax2.set_title(f"LCG Zero-Correlation Points (m={m})")
-ax2.set_xlim(min(b_vals), max(b_vals))
-ax2.set_ylim(min(a_vals), max(a_vals))
 ax2.grid(True)
 plt.show()
