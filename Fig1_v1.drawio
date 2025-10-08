@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36" version="28.2.5" pages="2">
   <diagram name="Fig1" id="-1gzF2Dyj5mBQXq9cQPM">
-    <mxGraphModel dx="1042" dy="527" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="1" shadow="0">
+    <mxGraphModel dx="595" dy="301" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="1" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -383,7 +383,7 @@
         <mxCell id="sPPq37ELEt1q1rfpjTLL-25" value="&lt;font face=&quot;Arial Narrow&quot; style=&quot;font-size: 22px;&quot;&gt;x(n)&lt;/font&gt;&lt;div&gt;&lt;span style=&quot;font-size: 22px;&quot;&gt;&lt;font face=&quot;Arial Narrow&quot;&gt;&lt;br&gt;&lt;/font&gt;&lt;/span&gt;&lt;div&gt;&lt;font face=&quot;Arial Narrow&quot; style=&quot;font-size: 22px;&quot;&gt;&lt;br&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font face=&quot;Arial Narrow&quot; style=&quot;font-size: 22px;&quot;&gt;x(n+1)&lt;/font&gt;&lt;/div&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;container=0;" parent="sUr1qKokxM94UTDC0hcx-65" vertex="1">
           <mxGeometry width="80" height="110" as="geometry" />
         </mxCell>
-        <mxCell id="sPPq37ELEt1q1rfpjTLL-6" value="a, b, &amp;amp; m" style="rounded=0;whiteSpace=wrap;strokeColor=#36393d;opacity=0;labelBorderColor=none;fillColor=none;fontFamily=Arial Narrow;fontSize=20;html=1;spacing=2;fontColor=light-dark(#787878, #ededed);container=0;fontStyle=3" parent="sUr1qKokxM94UTDC0hcx-65" vertex="1">
+        <mxCell id="sPPq37ELEt1q1rfpjTLL-6" value="a, b, &amp;amp; M" style="rounded=0;whiteSpace=wrap;strokeColor=#36393d;opacity=0;labelBorderColor=none;fillColor=none;fontFamily=Arial Narrow;fontSize=20;html=1;spacing=2;fontColor=light-dark(#787878, #ededed);container=0;fontStyle=3" parent="sUr1qKokxM94UTDC0hcx-65" vertex="1">
           <mxGeometry y="20" width="80" height="38" as="geometry" />
         </mxCell>
         <mxCell id="sUr1qKokxM94UTDC0hcx-150" value="$$&#xa;\Downarrow&#xa;$$" style="text;whiteSpace=wrap;fontFamily=Arial Narrow;fontSize=26;align=center;verticalAlign=middle;" vertex="1" parent="sUr1qKokxM94UTDC0hcx-65">
