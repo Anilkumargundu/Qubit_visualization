@@ -3,6 +3,7 @@ import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
 from scipy.stats import entropy
 from matplotlib import rcParams
+from matplotlib.ticker import AutoMinorLocator
 
 import matplotlib.font_manager as fm
 import matplotlib.pyplot as plt
@@ -12,15 +13,17 @@ import matplotlib.pyplot as plt
 # Set IEEE-compatible font and style
 # -------------------------
 plt.rcParams['font.family'] = 'Arial'  # Set font to Arial Narrow
-plt.rcParams['axes.labelsize'] = 16          # Label font size
+plt.rcParams['axes.labelsize'] = 20          # Label font size
 plt.rcParams['axes.titlesize'] = 16          # Title font size
-plt.rcParams['xtick.labelsize'] = 14
-plt.rcParams['ytick.labelsize'] = 14
+plt.rcParams['axes.titleweight'] = 'bold'  # Make title bold
+plt.rcParams['xtick.labelsize'] = 18
+plt.rcParams['ytick.labelsize'] = 18
 plt.rcParams['xtick.direction'] = 'out'      # Axis ticks outside
 plt.rcParams['ytick.direction'] = 'out'
-plt.rcParams['axes.linewidth'] = 1
+plt.rcParams['axes.linewidth'] = 1.1
 plt.rcParams['grid.linestyle'] = '--'
-plt.rcParams['grid.alpha'] = 0.6
+plt.rcParams['grid.alpha'] = 0.5
+plt.rcParams['axes.labelpad'] = 8   # distance in points (default ~4)
 
 # -------------------------
 # LCG class
@@ -46,10 +49,10 @@ class LinearCongruentialGenerator:
 # -------------------------
 # Parameters
 # -------------------------
-m = 32         # modulus
-seed = 10
-seq_len = 32
-num_samples = 500   # number of a and b samples
+m = 32768         # modulus
+seed = 16384
+seq_len = 500
+num_samples = 300   # number of a and b samples
 
 np.random.seed(42)
 a_vals = np.random.randint(1, m, size=num_samples)
@@ -141,12 +144,33 @@ cbar.ax.tick_params(labelsize=12, width=1)
 cbar.outline.set_linewidth(1)
 
 # -----------------------------
-# Z-axis limits and ticks
+# axis limits and ticks
 # -----------------------------
 ax1.set_zlim(-1, 1)
 ax1.set_zticks([-1, -0.5, 0, 0.5, 1])
+ax1.set_xlim(0, 32768)
+ax1.set_xticks([0, 8192, 16384, 24576, 32768])
+ax1.set_ylim(0, 32768)
+ax1.set_yticks([0, 8192, 16384, 24576])
+#ax1.legend()
 
-ax1.legend()
+# -------------------------
+# minor axis adding to plot - 1 
+# -------------------------
+
+# X-axis minor ticks
+# Minor ticks (without gridlines)
+ax1.xaxis.set_minor_locator(AutoMinorLocator())
+ax1.yaxis.set_minor_locator(AutoMinorLocator())
+ax1.zaxis.set_minor_locator(AutoMinorLocator())
+
+# Style ticks manually
+ax1.tick_params(axis='x', which='minor', length=0, width=1, color='k')
+ax1.tick_params(axis='y', which='minor', length=0, width=1, color='k')
+ax1.tick_params(axis='z', which='minor', length=4, width=1, color='k')
+
+# Only show major gridlines
+ax1.grid(True)  # by default, 3D grid is major only
 
 
 # -------------------------
@@ -157,7 +181,12 @@ ax2.scatter(A[zero_idx], B[zero_idx], color='red', s=60)
 ax2.set_xlabel("b (increment)")
 ax2.set_ylabel("a (multiplier)")
 #ax2.set_title(f"Zero-Correlation Points")
+ax2.xaxis.set_minor_locator(AutoMinorLocator())
+ax2.yaxis.set_minor_locator(AutoMinorLocator())
 ax2.grid(True)
+
+
+
 
 # -------------------------
 # Plot 3: Entropy on Zero-Correlation Points
@@ -180,6 +209,10 @@ sc = ax3.scatter(
 ax3.set_xlabel("b (increment)")
 ax3.set_ylabel("a (multiplier)")
 #ax3.set_title("Entropy of Zero-Correlation Points")
+
+# X-axis minor ticks
+ax3.xaxis.set_minor_locator(AutoMinorLocator())
+ax3.yaxis.set_minor_locator(AutoMinorLocator())
 
 # Colorbar customization
 cbar = plt.colorbar(sc, ax=ax3, label='Normalized Entropy', shrink=0.8, aspect=20, pad=0.02)
