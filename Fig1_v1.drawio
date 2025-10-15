@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36" version="28.2.6" pages="2">
   <diagram name="Fig1" id="-1gzF2Dyj5mBQXq9cQPM">
-    <mxGraphModel dx="868" dy="439" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="1" shadow="0">
+    <mxGraphModel dx="242" dy="123" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="1" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -432,7 +432,7 @@
           <mxGeometry x="553" y="352" width="98" height="50" as="geometry" />
         </mxCell>
         <mxCell id="sUr1qKokxM94UTDC0hcx-123" value="&lt;div style=&quot;line-height: 90%;&quot;&gt;&lt;b&gt;&lt;font style=&quot;font-size: 14px; line-height: 100%;&quot;&gt;superposed qubit&lt;/font&gt;&lt;/b&gt;&lt;/div&gt;" style="text;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontSize=11;spacing=0;fontFamily=Arial Narrow;" parent="1" vertex="1">
-          <mxGeometry x="290" y="327.5" width="89" height="20" as="geometry" />
+          <mxGeometry x="287" y="327.5" width="89" height="20" as="geometry" />
         </mxCell>
         <mxCell id="sUr1qKokxM94UTDC0hcx-127" value="&lt;div style=&quot;line-height: 90%;&quot;&gt;&lt;b&gt;&lt;font style=&quot;line-height: 100%; font-size: 14px;&quot;&gt;measurement outcome&lt;/font&gt;&lt;/b&gt;&lt;/div&gt;" style="text;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontSize=11;spacing=0;fontFamily=Arial Narrow;" parent="1" vertex="1">
           <mxGeometry x="466" y="329" width="89" height="20" as="geometry" />
