@@ -1,6 +1,10 @@
 Notes for me :
 Environment is running with command prompt only
+
+
 In quantum computing, we begin with a single basis state and apply the Hadamard gate to create a superposition in which all possible states are equally probable.
 This superposed state is then processed by additional quantum gates, allowing computations to act on all basis states simultaneously — which is the key difference from classical computing. 
 However, once we perform a measurement, the superposition collapses, and we observe only one of the possible basis states according to their probability amplitudes.
 This is the central idea: the computation is effectively carried out over all combinations at once due to the superposition principle.
+
+Resolving N-Qubits to single Q-bit to analyse
